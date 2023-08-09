@@ -10,6 +10,16 @@
     src: url("fonts/finger.ttf");
 }
 
+/* General styles for the web */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 body{
     font-family: "yanone", Arial, Helvetica;
+    font-size: 20px;
+    background: url("../img/pattern.png");
+    /* When we scroll on the web, the background remains fixed */
+    position: fixed;
 }
