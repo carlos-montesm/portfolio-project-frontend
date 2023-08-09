@@ -3,6 +3,9 @@
 # Fonts
 /src/assets/css/fonts/
 
+# Images
+/src/assets/img/
+
 # Compiled output
 /dist
 /tmp
