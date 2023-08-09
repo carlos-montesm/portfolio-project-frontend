@@ -1,0 +1,15 @@
+/* Import yanone font */
+@font-face {
+    font-family: "yanone";
+    src: url("fonts/yanone.ttf");
+}
+
+/* Import finger font */
+@font-face {
+    font-family: "finger";
+    src: url("fonts/finger.ttf");
+}
+
+body{
+    font-family: "yanone", Arial, Helvetica;
+}
