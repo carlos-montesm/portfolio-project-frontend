@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Fonts
+/src/assets/css/fonts/
+
 # Compiled output
 /dist
 /tmp
