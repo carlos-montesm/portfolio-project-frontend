@@ -20,6 +20,83 @@ body{
     font-family: "yanone", Arial, Helvetica;
     font-size: 20px;
     background: url("../img/pattern.png");
+
     /* When we scroll on the web, the background remains fixed */
+    background-attachment: fixed;
+}
+
+/* To clean the floats between the different elements */
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/* navigation bar / header */
+
+header{
+    /* So that the header adapts to the width of the page */
+    /* So that it behaves like a block */
+    display: block;
+
+    width: 100%;
+    height: 90px;
+    background: rgba(53, 103, 164, 0.8);
+
+    /* When we scroll on the web, the header remains fixed */
     position: fixed;
+
+    /* To put the text in capital letters of the header */
+    text-transform: uppercase;
+}
+
+/* To style the <ul> tag inside the header */
+header ul{
+    /* So that the header adapts to the width of the page */
+    /* So that it behaves like a block */
+    display: block;
+
+    width: 38%; /* Set the width of the <ul> or menu */
+
+    /* So that it inherits the parent's height */
+    height: inherit;
+
+    margin: 0px auto;
+}
+
+/* To style the <li> tag inside the header */
+header ul li{
+    /* So that the elements are placed next to each other */
+    display: inline-block;
+
+    margin: 0px auto;
+    text-align: center; /* Center text horizontally */
+    line-height: 90px; /* To center the <li> vertically */
+}
+
+/* To style the <a> tag inside the header */
+header a{
+    display: block;
+
+    /* To put space between <a> links */
+    padding-right: 20px;
+    padding-left: 20px;
+
+    /* So that it inherits the parent's height */
+    height: inherit;
+
+    text-decoration: none; /* To remove underlining from text */
+    color: white; /* White letter */
+    transition: all 300ms; /* When hovering over the links they have a transition */
+}
+
+/* When hovering over <a> elements */
+header a:hover{
+    background: rgba(0,0,0,0.8); /* Transparent black <a> link background */
+}
+
+/* Logo */
+
+/* For the <a> link logo don't have hover */
+header #logo a:hover{
+    background: transparent;
 }
