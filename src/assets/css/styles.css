@@ -55,12 +55,13 @@ header ul{
     /* So that it behaves like a block */
     display: block;
 
-    width: 38%; /* Set the width of the <ul> or menu */
+    width: 39%; /* Set the width of the <ul> or menu */
 
     /* So that it inherits the parent's height */
     height: inherit;
 
     margin: 0px auto;
+    margin-top: -3px;
 }
 
 /* To style the <li> tag inside the header */
@@ -70,7 +71,7 @@ header ul li{
 
     margin: 0px auto;
     text-align: center; /* Center text horizontally */
-    line-height: 90px; /* To center the <li> vertically */
+    line-height: 88px; /* To center the <li> vertically */
 }
 
 /* To style the <a> tag inside the header */
@@ -96,7 +97,20 @@ header a:hover{
 
 /* Logo */
 
-/* For the <a> link logo don't have hover */
+#logo{
+    font-family: "finger";
+    font-size: 30px;
+}
+
+#logo a{
+    /* Transition to make the animation look smooth */
+    transition: color 500ms, transform 500ms;
+}
+
 header #logo a:hover{
-    background: transparent;
+    background: transparent; /* For the <a> link logo don't have menu hover */
+    color: black; /* Change the logo color to black */
+    
+    /* Increase logo size, with a transition to make the animation look smooth */
+    transform: scale(1.50, 1.50);
 }
