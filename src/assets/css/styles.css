@@ -91,7 +91,8 @@ header a{
 }
 
 /* When hovering over <a> elements */
-header a:hover{
+header a:hover,
+.actived{
     background: rgba(0,0,0,0.8); /* Transparent black <a> link background */
 }
 
