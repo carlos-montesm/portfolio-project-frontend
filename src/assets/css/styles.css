@@ -143,3 +143,53 @@ footer{
     padding-top: 15px;
     color: rgba(0, 0, 0, 0.5);
 }
+
+/* About me */
+#title{
+    width: 70%;
+    margin: 0px auto; /* Center the div tag that contains the title */
+    text-align: center; /* center title, subtitle and email horizontally */
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+#title h1{
+    font-family: "finger"; /* Custom font for title */
+    font-size: 60px;
+
+    /* Horizontal line that divides the title and subtitle */
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* Subtitle */
+#title h2{
+    font-size: 25px;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Article containing title and description about me */
+article.aboutme{
+    width: 70%;
+    margin: 0px auto; /* Centers the article tag containing the title and paragraph */
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+/* Title */
+.aboutme h2{
+    /* Horizontal line that divides the title and the paragraph */
+    border-bottom: 1px solid #ccc;
+
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+/* Paragraph that describes my work information */
+.aboutme p{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: justify; /* Justified paragraph */
+}
