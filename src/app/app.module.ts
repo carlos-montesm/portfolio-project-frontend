@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'; // Use ajax requests
+import { FormsModule } from '@angular/forms'; // Use two-way data binding
 
 // The route module (routing) and the route service (appRoutingProviders) are imported
 import { routing, appRoutingProviders } from './app.routing';
@@ -22,7 +24,9 @@ import { ErrorComponent } from './components/error/error.component';
   ],
   imports: [
     BrowserModule,
-    routing // Routes configuration file is loaded
+    routing, // Routes configuration file is loaded
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     appRoutingProviders // The routes service is loaded for use in other components
