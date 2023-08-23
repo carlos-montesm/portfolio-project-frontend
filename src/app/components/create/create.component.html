@@ -1,1 +1,39 @@
-<p>create works!</p>
+//The form is created in the component view create.component.html to create and save a project
+
+<div class="container">
+    <h2>{{title}}</h2>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Name</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" />
+        </p>
+
+        <p>
+            <label for="description">Description</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description"></textarea>
+        </p>
+
+        <p>
+            <label for="category">Category</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" />
+        </p>
+
+        <p>
+            <label for="year">Release year</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" />
+        </p>
+
+        <p>
+            <label for="langs">Languages used</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" />
+        </p>
+
+        <p>
+            <label for="image">Project image</label>
+            <input type="file" name="image" placeholder="Upload image" />
+        </p>
+
+        <input type="submit" value="Send"/>
+    </form>
+</div>
