@@ -46,6 +46,6 @@
             <input type="file" name="image" placeholder="Upload image" />
         </p>
 
-        <input type="submit" value="Send"/>
+        <input type="submit" value="Send" [disabled]="!projectForm.form.valid" />
     </form>
 </div>
