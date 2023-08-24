@@ -219,6 +219,7 @@ form label{
     margin-bottom: 5px;
 }
 
+/*Styles for form attributes*/
 form input[type="text"],
 form input[type="number"],
 form input[type="email"],
@@ -227,6 +228,7 @@ form textarea{
     padding: 5px;
 }
 
+/*Styles for buttons*/
 form button,
 form input[type="submit"]{
     display: block;
@@ -239,6 +241,7 @@ form input[type="submit"]{
     cursor: pointer;
 }
 
+/*Effect illuminate the buttons*/
 form button:hover,
 form input[type="submit"]:hover{
     background: rgba(53, 103, 164, 0.8);
