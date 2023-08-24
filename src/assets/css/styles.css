@@ -209,7 +209,7 @@ article.aboutme{
 }
 
 form{
-    width: 50%;
+    width: 80%;
 }
 
 form label{
@@ -224,7 +224,7 @@ form input[type="text"],
 form input[type="number"],
 form input[type="email"],
 form textarea{
-    width: 80%;
+    width: 40%;
     padding: 5px;
 }
 
