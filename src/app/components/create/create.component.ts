@@ -23,8 +23,20 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // When the submit button of the form is pressed, the saveProject method is called, 
+  // to make a request by post to the api and save a project
   onSubmit(form: any){
     console.log(this.project);
+    
+    // saveProject method
+    this._projectService.saveProject(this.project).subscribe(
+      response => {
+        console.log(response); // Response successful
+      },
+      error => {
+        console.log(<any>error); // Error
+      }
+    );
   }
 
 }
