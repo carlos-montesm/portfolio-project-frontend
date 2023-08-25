@@ -3,6 +3,18 @@
 <div class="container">
     <h2>{{title}}</h2>
 
+    <!--show message in the view of the create project form, according 
+        to the project status variable in the create.component.ts, shows 
+        a message when creating, and saving a project, a successful 
+        message, otherwise a project not created message.-->
+    <div class="message success" *ngIf="status == 'success'">
+        The project has been created successfully
+    </div>
+
+    <div class="message failed" *ngIf="status == 'failed'">
+        The project WAS NOT CREATED
+    </div>
+
     <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
         <p>
             <label for="name">Name</label>
