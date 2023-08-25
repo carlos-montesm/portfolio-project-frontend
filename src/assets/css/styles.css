@@ -261,3 +261,20 @@ form input[disabled]{
     color: red;
     margin-left: 5px;
 }
+
+/*Styles: for the message that shows if the project was created, or not, in the form*/
+.message{
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #eee;
+}
+
+.success{
+    background: green;
+    color: white;
+}
+
+.failed{
+    background: red;
+    color: white;
+}
