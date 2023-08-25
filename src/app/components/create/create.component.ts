@@ -28,13 +28,14 @@ export class CreateComponent implements OnInit {
   // When the submit button of the form is pressed, the saveProject method is called, 
   // to make a request by post to the api and save a project
   onSubmit(form: any){
-    console.log(this.project);
+    //console.log(this.project);
     
     // saveProject method
     this._projectService.saveProject(this.project).subscribe(
       response => {
         if(response.project){
           this.status = 'success'; // Project created
+          form.reset(); // Empty all form fields
         }else{
           this.status = 'failed'; // Project not created
         }
