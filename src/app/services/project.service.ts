@@ -19,4 +19,18 @@ export class ProjectService{
     testService(){
         return 'Testing the Angular service';
     }
+
+    // Method to save a project in the database
+    saveProject(project: Project): Observable<any>{
+
+        // The data from the project object, and it is converted to a JSON string so that the api can read it
+        let params = JSON.stringify(project);
+        
+        // Headers: the information is sent as JSON format
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+
+        // The post method is used, and the url of the api to save a project in the backend
+        return this._http.post(this.url+'save-project', params, {headers: headers});
+    }
+
 }
