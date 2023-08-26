@@ -60,4 +60,12 @@ export class CreateComponent implements OnInit {
     );
   }
 
+  // Event (change) to grab all the data from the files, when there is a change in an input  
+  // File {name: 'image-name.jpg', lastModified, lastModifiedDate, size: 121453, etc}
+  fileChangeEvent(fileInput: any){
+    
+    // All the files we select with the input
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+  }
+
 }
