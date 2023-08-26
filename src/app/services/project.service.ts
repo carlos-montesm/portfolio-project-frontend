@@ -33,4 +33,13 @@ export class ProjectService{
         return this._http.post(this.url+'save-project', params, {headers: headers});
     }
 
+    // Get all the projects from the database
+    getProjects(): Observable<any>{
+        
+        // Headers: the information is sent as JSON format
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        // The get method is used, to get all projects
+        return this._http.get(this.url+'projects', {headers: headers});
+    }
 }
