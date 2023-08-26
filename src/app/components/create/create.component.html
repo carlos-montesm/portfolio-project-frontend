@@ -55,7 +55,9 @@
 
         <p>
             <label for="image">Project image</label>
-            <input type="file" name="image" placeholder="Upload image" />
+            
+            <!-- Event (change) to grab all the data from the files, when there is a change in an input -->
+            <input type="file" name="image" placeholder="Upload image" (change)="fileChangeEvent($event)" />
         </p>
 
         <input type="submit" value="Send" [disabled]="!projectForm.form.valid" />
