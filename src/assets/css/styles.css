@@ -119,7 +119,7 @@ header #logo a:hover{
 /* Main container */
 
 #content{
-    min-height: 500px;
+    min-height: 600px;
     width: 75%;
 
     /* To center the main content horizontally */
