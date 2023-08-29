@@ -302,3 +302,9 @@ form input[disabled]{
 .project img{
     width: 100%;
 }
+
+.project a{
+    /*Remove underline from project text*/
+    text-decoration: none;
+    color: black; /*Text color black*/
+}
