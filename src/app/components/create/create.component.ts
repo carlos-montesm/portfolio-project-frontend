@@ -14,6 +14,7 @@ export class CreateComponent implements OnInit {
 
   public title: string;
   public project: Project;
+  public save_project: any;
   public status: string;
   public filesToUpload: Array<File>;
 
@@ -44,7 +45,9 @@ export class CreateComponent implements OnInit {
           this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
           .then((result:any) => {
             
-            console.log(result);
+            //console.log(result);
+            // Save the project object in the save_project variable, to have the information available to display on the project details page
+            this.save_project = result.project;
 
             this.status = 'success'; // Project created
             form.reset(); // Empty all form fields
