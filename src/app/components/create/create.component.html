@@ -8,7 +8,7 @@
         a message when creating, and saving a project, a successful 
         message, otherwise a project not created message.-->
     <div class="message success" *ngIf="status == 'success'">
-        The project has been created successfully
+        The project has been created successfully, <a [routerLink]="['/project', save_project._id]">project here</a>
     </div>
 
     <div class="message failed" *ngIf="status == 'failed'">
