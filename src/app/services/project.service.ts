@@ -42,4 +42,14 @@ export class ProjectService{
         // The get method is used, to get all projects
         return this._http.get(this.url+'projects', {headers: headers});
     }
+
+    // Returns a project from the database, specified by the id parameter, to display its information on the details page
+    getProject(id:any): Observable<any>{
+
+        // Headers: the information is sent as JSON format
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        // Returns a project from the database
+        return this._http.get(this.url+'project/'+id, {headers: headers});
+    }
 }
