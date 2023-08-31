@@ -48,4 +48,20 @@ export class DetailComponent implements OnInit {
       });
   }
 
+  // Calls the deleteProject method of the service (project.service.ts) that interacts with the api, to delete a project
+  deleteProject(id:any){
+    
+    // Calls the deleteProject method of the service
+    this._projectService.deleteProject(id).subscribe(
+      response => {
+        if(response.project){ // If the project exists
+          this._router.navigate(['/projects']); // Redirects to projects page, deleted project
+        }
+      },
+      error => {
+        console.log(<any>error); // Error message
+      }
+    );
+  }
+
 }
