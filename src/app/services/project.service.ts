@@ -52,4 +52,14 @@ export class ProjectService{
         // Returns a project from the database
         return this._http.get(this.url+'project/'+id, {headers: headers});
     }
+
+    // Delete a project from the database, specified by the id parameter
+    deleteProject(id:any): Observable<any>{
+        
+        // Headers: the information is sent as JSON format
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        
+        // Delete a project from the database
+        return this._http.delete(this.url+'project/'+id, {headers: headers});
+    }
 }
