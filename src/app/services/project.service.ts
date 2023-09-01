@@ -62,4 +62,18 @@ export class ProjectService{
         // Delete a project from the database
         return this._http.delete(this.url+'project/'+id, {headers: headers});
     }
+
+    // Update a project from the database, specified by the project parameter
+    updateProject(project:Project):Observable<any>{
+        
+        // The data from the project object, and it is converted to a JSON string so that the api can read it
+        let params = JSON.stringify(project);
+        
+        // Headers: the information is sent as JSON format
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        // Update a project from the database
+        return this._http.put(this.url+'project/'+project._id, params, {headers: headers});
+    }
+
 }
