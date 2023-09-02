@@ -58,5 +58,43 @@ export class EditComponent implements OnInit {
       });
   }
 
-  
+  // When the submit button of the form is pressed, the updateProject method is called, 
+  // to make a request by post to the api and update a project
+  onSubmit(form: any){
+    this._projectService.updateProject(this.project).subscribe(
+      response => {
+        if(response.project){
+          
+          // Upload the image, image was chosen in the select file button
+          if(this.filesToUpload){
+            this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
+            .then((result:any) => {
+              
+              // Save the project object in the save_project variable, to have the information available to display on the edit project page
+              this.save_project = result.project;
+
+              this.status = 'success'; // Project updated
+            });
+          }else{ // No image was chosen in the select file button
+            this.save_project = response.project;
+            this.status = 'success';
+          }
+        }else{
+          this.status = 'failed'; // Project not updated
+        }
+      },
+      error => {
+        console.log(<any>error); // Error message, project not updated
+      }
+    );
+  }
+
+  // Event (change) to grab all the data from the files, when there is a change in an input  
+  // File {name: 'image-name.jpg', lastModified, lastModifiedDate, size: 121453, etc}
+  fileChangeEvent(fileInput: any){
+    
+    // All the files we select with the input
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+  }
+
 }
