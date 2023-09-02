@@ -1,6 +1,6 @@
 <!-- The form is created in the component view create.component.html to create and save a project -->
 
-<div class="container">
+<div class="container" *ngIf="project">
     <h2>{{title}}</h2>
 
     <!--show message in the view of the create project form, according 
@@ -55,6 +55,9 @@
 
         <p>
             <label for="image">Project image</label>
+            <span class="image" *ngIf="project.image" style="float: none;">
+                <img src="{{url+'get-image/'+project.image}}" style="width:100px;"/>
+            </span><br/>
             
             <!-- Event (change) to grab all the data from the files, when there is a change in an input -->
             <input type="file" name="image" placeholder="Upload image" (change)="fileChangeEvent($event)" />
