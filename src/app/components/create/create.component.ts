@@ -17,6 +17,7 @@ export class CreateComponent implements OnInit {
   public save_project: any;
   public status: string;
   public filesToUpload: Array<File>;
+  public url: string;
 
   constructor(
     private _projectService: ProjectService,
@@ -26,9 +27,10 @@ export class CreateComponent implements OnInit {
     this.project = new Project('','','','',0,'','');
     this.status = "";
     this.filesToUpload = [];
+    this.url = Global.url;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   // When the submit button of the form is pressed, the saveProject method is called, 
@@ -42,17 +44,22 @@ export class CreateComponent implements OnInit {
         if(response.project){
           
           // Upload the image
-          this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
-          .then((result:any) => {
-            
-            //console.log(result);
-            // Save the project object in the save_project variable, to have the information available to display on the project details page
-            this.save_project = result.project;
+          if(this.filesToUpload){
+            this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
+            .then((result:any) => {
+              
+              //console.log(result);
+              // Save the project object in the save_project variable, to have the information available to display on the project details page
+              this.save_project = result.project;
 
-            this.status = 'success'; // Project created
-            form.reset(); // Empty all form fields
-          });
-          
+              this.status = 'success'; // Project created
+              form.reset(); // Empty all form fields
+            });
+          }else{
+            this.save_project = response.project;
+            this.status = 'success';
+            form.reset();
+          }
         }else{
           this.status = 'failed'; // Project not created
         }
