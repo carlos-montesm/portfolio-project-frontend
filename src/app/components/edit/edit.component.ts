@@ -66,7 +66,7 @@ export class EditComponent implements OnInit {
         if(response.project){
           
           // Upload the image, image was chosen in the select file button
-          if(this.filesToUpload){
+          if(this.filesToUpload.length >= 1){
             this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
             .then((result:any) => {
               
