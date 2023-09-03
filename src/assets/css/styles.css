@@ -347,3 +347,9 @@ form input[disabled]{
     color: black; /*Text color black*/
 }
 
+/* Confirmation message styles */
+.confirm{
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+}
