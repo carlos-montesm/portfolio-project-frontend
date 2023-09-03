@@ -9,9 +9,19 @@
         <h3>{{project.description}}</h3>
         <p>{{project.category}}</p>
         <p>{{project.langs}}</p>
-        <p>
+        
+        <!-- True displays a confirmation message to delete a project, false removes it to delete nothing -->
+        <!-- Displays the edit and delete project buttons -->
+        <p *ngIf="confirm == false">
             <a [routerLink]="['/edit-project', project._id]" class="button-edit">Edit</a>
-            <a (click)="deleteProject(project._id)" class="button-delete">Delete</a>
+            <a (click)="setConfirm(true)" class="button-delete">Delete</a>
+        </p>
+
+        <!-- True displays a confirmation message to delete a project, false removes it to delete nothing -->
+        <p *ngIf="confirm == true">
+            <span class="confirm">Are you sure to delete this project?</span>
+            <a (click)="setConfirm(false)" class="button-edit">Cancel</a>
+            <a (click)="deleteProject(project._id)" class="button-delete">Delete permanently</a>
         </p>
     </div>
 </div>
