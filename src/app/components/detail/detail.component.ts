@@ -11,8 +11,12 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   providers: [ProjectService]
 })
 export class DetailComponent implements OnInit {
-  public url: string;
+  public url: string; // api url
   public project: Project;
+
+  // True displays a confirmation message to delete a project, 
+  // false removes it to delete nothing
+  public confirm: boolean;
 
   constructor(
     private _projectService: ProjectService,
@@ -21,6 +25,7 @@ export class DetailComponent implements OnInit {
   ){
     this.url = Global.url;
     this.project = new Project('','','','',0,'','');
+    this.confirm = false;
   }
 
   ngOnInit() {
@@ -46,6 +51,11 @@ export class DetailComponent implements OnInit {
       error => {
         console.log(<any>error); // Error message
       });
+  }
+
+  // Confirm if you want to delete a project
+  setConfirm(confirm:boolean){
+    this.confirm = confirm;
   }
 
   // Calls the deleteProject method of the service (project.service.ts) that interacts with the api, to delete a project
